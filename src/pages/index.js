@@ -20,7 +20,7 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleDownload = () => {
-    const pdfUrl = 'https://drive.google.com/file/d/1ZchHjfDsW095Pi7AMqgvbZKdjZG6CLxd/view?usp=drive_link';
+    const pdfUrl = 'https://drive.google.com/file/d/1mkGucsrHm76GoSKAXfmVCbayW742-oFz/view?usp=drive_link';
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.target = '_blank';
