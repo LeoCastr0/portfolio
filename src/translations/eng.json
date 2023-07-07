@@ -1,0 +1,28 @@
+{
+  "@metadata": {
+    "authors": [
+      "Leonardo Fagundes de Castro"
+    ],
+    "locale": "en"
+  },
+  "resume": "Resumé",
+  "introduction_header": "Developer offering frontend and backend services. See below for more details about my profile.",
+  "summary": "Summary",
+  "summary_text_1": "Highly skilled and proficient in various aspects of web development, I possess a strong command of the ",
+  "summary_text_2": "language and excel in ",
+  "summary_text_3": " With a solid foundation in these technologies, I have consistently delivered high-quality solutions and contributed to the successful development of numerous projects.\nMy extensive knowledge and expertise in these areas allow me to effectively design, develop, and implement engaging and user-friendly web applications.",
+  "summary_text_4": " Additionally, my strong ",
+  "summary_text_5": "abilities and attention to detail enable me to tackle complex challenges and deliver efficient solutions.",
+  "summary_text_6": " With a passion for staying up to date with the latest industry trends, I consistently strive to enhance my skills and ensure that my work remains innovative and cutting-edge.\nThrough my commitment to excellence and a proven track record of success, I am well-equipped to contribute to any team or project that requires expertise in ",
+  "and": " and",
+  "english": "English",
+  "frontend_text": "Creating elegant frontend responsive interfaces to provide the best UX for the users.",
+  "backend_text": "Developing efficient APIs to provide processed data to the frontend and to other applications",
+  "languages_text": "Ability to speak fluently more then one language, to be able to communicate with the team.",
+  "languages_i_speak": "Languages that I speak",
+  "portuguese_level": "Portuguese - Native",
+  "english_level": "English - Fluent",
+  "spanish_level": "Spanish - Basis",
+  "relevant_companies_text": "Relevant Companies that I've worked for" ,
+  "activities": "Activities"
+}
