@@ -14,10 +14,13 @@ import design from '../../public/design.png'
 import code from '../../public/code.png'
 import languages from '../../public/language.png'
 import { useState } from "react";
+import {FormattedMessage, useIntl} from 'react-intl'
 
 export default function Home() {
 
   const [darkMode, setDarkMode] = useState(false);
+
+  const intl = useIntl();
 
   const handleDownload = () => {
     const pdfUrl = 'https://drive.google.com/file/d/1mkGucsrHm76GoSKAXfmVCbayW742-oFz/view?usp=drive_link';
@@ -40,14 +43,18 @@ export default function Home() {
           <h1 className="text-xl font-burtons dark:text-gray-100">Developed by Leonardo</h1>
           <ul className="flex items-center">
             <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-gray-300" /></li>
-            <li><a className="bg-gray-300 text-teal-800 px-4 py-2 rounded-md ml-8" href="#" onClick={handleDownload}>Resume</a></li>
+            <li><a className="bg-gray-300 text-teal-800 px-4 py-2 rounded-md ml-8" href="#" onClick={handleDownload}>
+              <FormattedMessage id="resume" defaultMessage="Resumé" />
+            </a></li>
           </ul>
         </nav>
         <section className="min-h-screen min-w-screen">
           <div className="text-center p-2">
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">Leonardo Castro</h2>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-100">Full-Stack JavaScript Developer</h3>
-            <p className="tex-md py-5 leading-8 text-gray-800 dark:text-gray-300 md:text-xl max-w-xl mx-auto">Developer providing frontend and backend services. Point down below and let's get checking</p>
+            <p className="tex-md py-5 leading-8 text-gray-800 dark:text-gray-300 md:text-xl max-w-xl mx-auto">
+              <FormattedMessage id="introduction_header" defaultMessage="Developer offering frontend and backend services. See below for more details about my profile." />
+            </p>
           </div>
           <div className="text-5xl flex justify-center gap-12 md:gap-16 py-3 text-gray-600">
             <a href="https://twitter.com/leocastroHP" target="_blank"><AiFillTwitterCircle /></a>
@@ -61,31 +68,32 @@ export default function Home() {
         </section>
         <section>
           <div>
-            <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left">Summary</h3>
+            <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left"><FormattedMessage id="summary" defaultMessage="Summary" /></h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
-              Highly skilled and proficient in various aspects of web development, I possess a strong command of the <span className="text-teal-500">English</span> language and excel in <span className="text-teal-500">JavaScript</span>,
-              <span className="text-teal-500">Node.js</span>, <span className="text-teal-500">React.js</span>, <span className="text-teal-500">HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>, and <span className="text-teal-500">Bootstrap</span>.
-              With a solid foundation in these technologies, I have consistently delivered high-quality solutions and contributed to the successful development of numerous projects.
-              My extensive knowledge and expertise in these areas allow me to effectively design, develop, and implement engaging and user-friendly web applications.
-              Additionally, my strong <span className="text-teal-500">problem-solving</span> abilities and attention to detail enable me to tackle complex challenges and deliver efficient solutions.
-              With a passion for staying up to date with the latest industry trends, I consistently strive to enhance my skills and ensure that my work remains innovative and cutting-edge.
-              Through my commitment to excellence and a proven track record of success, I am well-equipped to contribute to any team or project that requires expertise in <span className="text-teal-500">English</span>, <span className="text-teal-500">JavaScript</span>, <span className="text-teal-500">Node.js</span>, <span className="text-teal-500">React.js</span>, <span className="text-teal-500">HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>, and <span className="text-teal-500">Bootstrap</span>.
+              <FormattedMessage id="summary_text_1"/><span className="text-teal-500"><FormattedMessage id="english" /> </span><FormattedMessage id="summary_text_2"/><span className="text-teal-500">JavaScript</span>,
+              <span className="text-teal-500"> Node.js</span>, <span className="text-teal-500">React.js</span>, <span className="text-teal-500">HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>,
+              <FormattedMessage id="and" /> <span className="text-teal-500">Bootstrap</span>.
+              <FormattedMessage id="summary_text_3" />
+              <FormattedMessage id="summary_text_4" /><span className="text-teal-500">problem-solving</span> <FormattedMessage id="summary_text_5" />
+              <FormattedMessage id="summary_text_6" /> <span className="text-teal-500"><FormattedMessage id="english" /></span>, <span className="text-teal-500">JavaScript</span>, <span className="text-teal-500">Node.js</span>,
+              <span className="text-teal-500"> React.js</span>,<span className="text-teal-500"> HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>,
+              <FormattedMessage id="and" /><span className="text-teal-500"> Bootstrap</span>.
             </p>
           </div>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={design} className="mx-auto" width={100} height={100}/>
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Frontend</h3>
-              <p className="py-2 dark:text-gray-400">Creating elegant frontend responsive interfaces to provide the best UX for the users.</p>
+              <p className="py-2 dark:text-gray-400"><FormattedMessage id="frontend_text"/> </p>
               <h4 className="py-4 text-teal-600 font-bold">Frontend stacks</h4>
-              <p className="text-gray-800 py-1 dark:text-gray-300">React.js and Redux</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">CSS and HTML</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Tailwind and Bootstrap</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">React.js - Redux</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">CSS - HTML</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Tailwind - Bootstrap</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={code} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Backend</h3>
-              <p className="py-2 dark:text-gray-400">Developing efficient APIs to provide processed data to the frontend and to other applications</p>
+              <p className="py-2 dark:text-gray-400"><FormattedMessage id="backend_text" /></p>
               <h4 className="py-4 text-teal-600 font-bold">Backend stacks</h4>
               <p className="text-gray-800 py-1 dark:text-gray-300">Node.js and Express</p>
               <p className="text-gray-800 py-1 dark:text-gray-300">Mongo.db and Mongoose</p>
@@ -94,22 +102,22 @@ export default function Home() {
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={languages} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Languages</h3>
-              <p className="py-2 dark:text-gray-400">Ability to speak fluently more then one language, to be able to communicate with the team.</p>
-              <h4 className="py-4 text-teal-600 font-bold">Languages that I speak</h4>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Portuguese - Native</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">English - Fluent</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Spanish - Basis</p>
+              <p className="py-2 dark:text-gray-400"><FormattedMessage id="languages_text" /></p>
+              <h4 className="py-4 text-teal-600 font-bold"><FormattedMessage id="languages_i_speak" /></h4>
+              <p className="text-gray-800 py-1 dark:text-gray-300"><FormattedMessage id="portuguese_level" /></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300"><FormattedMessage id="english_level" /></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300"><FormattedMessage id="spanish_level" /></p>
             </div>
           </div>
         </section>
         <section>
-          <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left">Relevant Companies that I've worked for </h3>
+          <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left"><FormattedMessage id="relevant_companies_text" /></h3>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={languages} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Companio OU</h3>
               <p className="py-2 dark:text-gray-400">FullStack JavaScript Engineer</p>
-              <h4 className="py-4 text-teal-600 font-bold">Activities</h4>
+              <h4 className="py-4 text-teal-600 font-bold"><FormattedMessage id="activities" /></h4>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Developed new features and enhancements in both frontend and backend using JavaScript as the primary programming language.</p>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Conducted source code analysis to identify and correct the root causes of issues.</p>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Participated in weekly video meetings with a multicultural and multilingual development team to align on project needs, improvements, and tasks.</p>
