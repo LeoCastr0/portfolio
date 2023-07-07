@@ -1,18 +1,18 @@
 import Head from "next/head";
 import {BsFillMoonStarsFill} from 'react-icons/bs'
-import {AiFillTwitterCircle, AiFillLinkedin, AiFillGithub} from 'react-icons/ai'
+import {
+  AiFillTwitterCircle,
+  AiFillLinkedin,
+  AiFillGithub,
+  AiFillMail,
+  AiFillPhone,
+  AiFillInstagram
+} from 'react-icons/ai'
 import Image from "next/image"
 import leonardo from '../../public/profile-pic.png'
 import design from '../../public/design.png'
 import code from '../../public/code.png'
 import languages from '../../public/language.png'
-import web1 from '../../public/web1.png'
-import web2 from '../../public/web2.png'
-import web3 from '../../public/web3.png'
-import web4 from '../../public/web4.png'
-import web5 from '../../public/web5.png'
-import web6 from '../../public/web6.png'
-//import resume from '../../public/resume.pdf'
 import { useState } from "react";
 
 export default function Home() {
@@ -36,37 +36,40 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
+        <nav className="p-5 mb-12 flex justify-between sticky top-0 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-xl rounded-t-none z-10">
+          <h1 className="text-xl font-burtons dark:text-gray-100">Developed by Leonardo</h1>
+          <ul className="flex items-center">
+            <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-gray-300" /></li>
+            <li><a className="bg-gray-300 text-teal-800 px-4 py-2 rounded-md ml-8" href="#" onClick={handleDownload}>Resume</a></li>
+          </ul>
+        </nav>
         <section className="min-h-screen">
-          <nav className="p-10 mb-12 flex justify-between">
-            <h1 className="text-xl font-burtons dark:text-gray-100">Developed by Leonardo</h1>
-            <ul className="flex items-center">
-              <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-gray-300" /></li>
-              <li><a className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8" href="#" onClick={handleDownload}>Resume</a></li>
-            </ul>
-          </nav>
-          <div className="text-center p-10">
+          <div className="text-center p-2">
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">Leonardo Castro</h2>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-100">Full-Stack JavaScript Developer</h3>
-            <p className="tex-md py-5 leading-8 text-gray-800 dark:text-gray-300 md:text-xl max-w-xl mx-auto">Freelancer providing services frontend and backend services. Point down below and let's get checking</p>
+            <p className="tex-md py-5 leading-8 text-gray-800 dark:text-gray-300 md:text-xl max-w-xl mx-auto">Developer providing frontend and backend services. Point down below and let's get checking</p>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
-            <a href="https://twitter.com/leocastroHP"><AiFillTwitterCircle /></a>
-            <a href="https://www.linkedin.com/in/leonardo-fagundes-de-castro/"><AiFillLinkedin /></a>
-            <a href="https://github.com/LeoCastr0"><AiFillGithub /></a>
+            <a href="https://twitter.com/leocastroHP" target="_blank"><AiFillTwitterCircle /></a>
+            <a href="https://www.instagram.com/leocastrosl/" target="_blank"><AiFillInstagram /></a>
+            <a href="https://www.linkedin.com/in/leonardo-fagundes-de-castro/" target="_blank"><AiFillLinkedin /></a>
+            <a href="https://github.com/LeoCastr0" target="_blank"><AiFillGithub /></a>
           </div>
-          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
+          <div className="relative mx-auto rounded-full w-80 h-80 mt-20 md:h-96 md:w-96">
             <Image src={leonardo} layout="fill" objectFit="cover"/>
           </div>
         </section>
         <section>
           <div>
-            <h3 className="text-3xl py-1 dark:text-gray-100">Services I offer</h3>
+            <h3 className="text-3xl py-1 dark:text-gray-100">Summary</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
-              Since the beginning of my journey as a FullStack developer, I've done remote work for 
-              <span className="text-teal-500"> tech companies</span> and collaborated with talanted people to create digital products for foth both business and customer use.
-            </p>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
-             I offer a FullStack developer service with the most updated features, and my main stack are node.js and <span className="text-teal-500">React.js</span>, <span className="text-teal-500">Redux</span>, <span className="text-teal-500">Node.js</span>, and <span className="text-teal-500">Mongo.DB</span> 
+              Highly skilled and proficient in various aspects of web development, I possess a strong command of the <span className="text-teal-500">English</span> language and excel in <span className="text-teal-500">JavaScript</span>,
+              <span className="text-teal-500">Node.js</span>, <span className="text-teal-500">React.js</span>, <span className="text-teal-500">HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>, and <span className="text-teal-500">Bootstrap</span>.
+              With a solid foundation in these technologies, I have consistently delivered high-quality solutions and contributed to the successful development of numerous projects.
+              My extensive knowledge and expertise in these areas allow me to effectively design, develop, and implement engaging and user-friendly web applications.
+              Additionally, my strong <span className="text-teal-500">problem-solving</span> abilities and attention to detail enable me to tackle complex challenges and deliver efficient solutions.
+              With a passion for staying up to date with the latest industry trends, I consistently strive to enhance my skills and ensure that my work remains innovative and cutting-edge.
+              Through my commitment to excellence and a proven track record of success, I am well-equipped to contribute to any team or project that requires expertise in <span className="text-teal-500">English</span>, <span className="text-teal-500">JavaScript</span>, <span className="text-teal-500">Node.js</span>, <span className="text-teal-500">React.js</span>, <span className="text-teal-500">HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>, and <span className="text-teal-500">Bootstrap</span>.
             </p>
           </div>
           <div className="lg:flex gap-10">
@@ -100,37 +103,49 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div>
-            <h3 className="text-3xl py-1 dark:text-gray-100">Portfolio</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
-              Since the beginning of my journey as a freelance developer, I've done remote work for 
-              <span className="text-teal-500"> agencies</span> consulted for <span className="text-teal-500">startups</span> and collaborated with talanted people to create digital products for foth both business and customer use.
-            </p>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
-             I offer a full-stack developer service with the most updated features such as node.js and react.js
-            </p>
-          </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1">
-              <Image src={web1} className="rounded-lg object-cover" height={'100%'} width={'100%'} layout={'responsive'}/>
+          <h3 className="text-3xl py-1 dark:text-gray-100">Relevant Companies that I've worked for </h3>
+          <div className="lg:flex gap-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
+              <Image src={languages} className="mx-auto" width={100} height={100} />
+              <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Companio OU</h3>
+              <p className="py-2 dark:text-gray-400">FullStack JavaScript Engineer</p>
+              <h4 className="py-4 text-teal-600 font-bold">Activities</h4>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Developed new features and enhancements in both frontend and backend using JavaScript as the primary programming language.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Conducted source code analysis to identify and correct the root causes of issues.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Participated in weekly video meetings with a multicultural and multilingual development team to align on project needs, improvements, and tasks.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Hosted Knowledge Sharing sessions for all company employees to promote learning and knowledge exchange.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Took initiative to dive into new projects aimed at enhancing the company's system.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Utilized Git as the version control system and GitHub as remote repositories for efficient code management.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Developed new features using React.js and Redux for frontend development.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Integrated third-party applications with company APIs to improve system functionality and connectivity.</p>
             </div>
-            <div className="basis-1/3 flex-1">
-              <Image src={web2} className="rounded-lg object-cover" height={'100%'} width={'100%'} layout={'responsive'}/>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image src={web3} className="rounded-lg object-cover" height={'100%'} width={'100%'} layout={'responsive'}/>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image src={web4} className="rounded-lg object-cover" height={'100%'} width={'100%'} layout={'responsive'}/>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image src={web5} className="rounded-lg object-cover" height={'100%'} width={'100%'} layout={'responsive'}/>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image src={web6} className="rounded-lg object-cover" height={'100%'} width={'100%'} layout={'responsive'}/>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
+              <Image src={languages} className="mx-auto" width={100} height={100} />
+              <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Tata Consultancy Services</h3>
+              <p className="py-2 dark:text-gray-400">Systems Support analyst</p>
+              <h4 className="py-4 text-teal-600 font-bold">Activities</h4>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Actively read source code to identify root causes of problems and implement necessary corrections.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Provide user support for systems, including ADM system (ERP) and JDE Oracle Origination.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Deliver training to new team members and develop process optimization strategies.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Prepare Procedure Operation Process (POP) manuals for system operations.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Generate reports using Microsoft SQL Server and Toad (Oracle) to support audits and business activities.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Collaborate with fiscal and accounting teams for monthly closing to ensure compliance.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300">Demonstrate expertise in problem-solving and bug resolution for web systems developed by the company.</p>
             </div>
           </div>
         </section>
+        <footer>
+          <div className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-center rounded-xl ">
+            <p className="font-burtons text-2xl pt-3">Thank you for visiting my Portfolio</p>
+            <p className="font-bold text-xl mb-3">These are my contacts:</p>
+            <div className="flex justify-center">
+              <AiFillMail className="text-xl"/><p className="mx-2">leonardofagundescastro@gmail.com</p>
+            </div>
+            <div className="flex justify-center pb-3">
+              <AiFillPhone className="text-xl"/><p className="mx-2">+55 (16) 99792-6365</p>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   )
