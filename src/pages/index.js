@@ -49,7 +49,7 @@ export default function Home() {
             <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-100">Full-Stack JavaScript Developer</h3>
             <p className="tex-md py-5 leading-8 text-gray-800 dark:text-gray-300 md:text-xl max-w-xl mx-auto">Developer providing frontend and backend services. Point down below and let's get checking</p>
           </div>
-          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+          <div className="text-5xl flex justify-center gap-12 md:gap-16 py-3 text-gray-600">
             <a href="https://twitter.com/leocastroHP" target="_blank"><AiFillTwitterCircle /></a>
             <a href="https://www.instagram.com/leocastrosl/" target="_blank"><AiFillInstagram /></a>
             <a href="https://www.linkedin.com/in/leonardo-fagundes-de-castro/" target="_blank"><AiFillLinkedin /></a>
