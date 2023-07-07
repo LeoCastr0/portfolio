@@ -36,14 +36,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
-        <nav className="p-5 mb-12 flex justify-between sticky top-0 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-xl rounded-t-none z-10">
+        <nav className="p-5 mb-12 flex justify-between md:sticky top-0 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-xl rounded-t-none z-10">
           <h1 className="text-xl font-burtons dark:text-gray-100">Developed by Leonardo</h1>
           <ul className="flex items-center">
             <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-gray-300" /></li>
             <li><a className="bg-gray-300 text-teal-800 px-4 py-2 rounded-md ml-8" href="#" onClick={handleDownload}>Resume</a></li>
           </ul>
         </nav>
-        <section className="min-h-screen">
+        <section className="min-h-screen min-w-screen">
           <div className="text-center p-2">
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">Leonardo Castro</h2>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-100">Full-Stack JavaScript Developer</h3>
@@ -61,7 +61,7 @@ export default function Home() {
         </section>
         <section>
           <div>
-            <h3 className="text-3xl py-1 dark:text-gray-100">Summary</h3>
+            <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left">Summary</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
               Highly skilled and proficient in various aspects of web development, I possess a strong command of the <span className="text-teal-500">English</span> language and excel in <span className="text-teal-500">JavaScript</span>,
               <span className="text-teal-500">Node.js</span>, <span className="text-teal-500">React.js</span>, <span className="text-teal-500">HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>, and <span className="text-teal-500">Bootstrap</span>.
@@ -103,34 +103,34 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <h3 className="text-3xl py-1 dark:text-gray-100">Relevant Companies that I've worked for </h3>
+          <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left">Relevant Companies that I've worked for </h3>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={languages} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Companio OU</h3>
               <p className="py-2 dark:text-gray-400">FullStack JavaScript Engineer</p>
               <h4 className="py-4 text-teal-600 font-bold">Activities</h4>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Developed new features and enhancements in both frontend and backend using JavaScript as the primary programming language.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Conducted source code analysis to identify and correct the root causes of issues.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Participated in weekly video meetings with a multicultural and multilingual development team to align on project needs, improvements, and tasks.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Hosted Knowledge Sharing sessions for all company employees to promote learning and knowledge exchange.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Took initiative to dive into new projects aimed at enhancing the company's system.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Utilized Git as the version control system and GitHub as remote repositories for efficient code management.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Developed new features using React.js and Redux for frontend development.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Integrated third-party applications with company APIs to improve system functionality and connectivity.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Developed new features and enhancements in both frontend and backend using JavaScript as the primary programming language.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Conducted source code analysis to identify and correct the root causes of issues.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Participated in weekly video meetings with a multicultural and multilingual development team to align on project needs, improvements, and tasks.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Hosted Knowledge Sharing sessions for all company employees to promote learning and knowledge exchange.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Took initiative to dive into new projects aimed at enhancing the company's system.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Utilized Git as the version control system and GitHub as remote repositories for efficient code management.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Developed new features using React.js and Redux for frontend development.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Integrated third-party applications with company APIs to improve system functionality and connectivity.</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={languages} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Tata Consultancy Services</h3>
               <p className="py-2 dark:text-gray-400">Systems Support analyst</p>
               <h4 className="py-4 text-teal-600 font-bold">Activities</h4>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Actively read source code to identify root causes of problems and implement necessary corrections.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Provide user support for systems, including ADM system (ERP) and JDE Oracle Origination.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Deliver training to new team members and develop process optimization strategies.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Prepare Procedure Operation Process (POP) manuals for system operations.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Generate reports using Microsoft SQL Server and Toad (Oracle) to support audits and business activities.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Collaborate with fiscal and accounting teams for monthly closing to ensure compliance.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300">Demonstrate expertise in problem-solving and bug resolution for web systems developed by the company.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Actively read source code to identify root causes of problems and implement necessary corrections.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Provide user support for systems, including ADM system (ERP) and JDE Oracle Origination.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Deliver training to new team members and develop process optimization strategies.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Prepare Procedure Operation Process (POP) manuals for system operations.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Generate reports using Microsoft SQL Server and Toad (Oracle) to support audits and business activities.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Collaborate with fiscal and accounting teams for monthly closing to ensure compliance.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Demonstrate expertise in problem-solving and bug resolution for web systems developed by the company.</p>
             </div>
           </div>
         </section>
