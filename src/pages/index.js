@@ -14,13 +14,22 @@ import design from '../../public/design.png'
 import code from '../../public/code.png'
 import languages from '../../public/language.png'
 import { useState } from "react";
-import {FormattedMessage, useIntl} from 'react-intl'
+import {FormattedMessage} from 'react-intl'
+import { useRouter } from 'next/router';
 
-export default function Home() {
-
+export default function Home({locale}) {
   const [darkMode, setDarkMode] = useState(false);
 
-  const intl = useIntl();
+  const router = useRouter()
+
+  const onChangeLanguage = (lang) => (e) => {
+    e.preventDefault();
+    if(lang === 'pt') {
+      router.push('pt');
+    } else {
+      router.back();
+    }
+  }
 
   const handleDownload = () => {
     const pdfUrl = 'https://drive.google.com/file/d/1mkGucsrHm76GoSKAXfmVCbayW742-oFz/view?usp=drive_link';
@@ -39,7 +48,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
-        <nav className="p-5 mb-12 flex justify-between md:sticky top-0 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-xl rounded-t-none z-10">
+        <nav className="p-5 mb-6 flex justify-between md:sticky top-0 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-xl rounded-t-none z-10">
           <h1 className="text-xl font-burtons dark:text-gray-100">Developed by Leonardo</h1>
           <ul className="flex items-center">
             <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-gray-300" /></li>
@@ -49,6 +58,11 @@ export default function Home() {
           </ul>
         </nav>
         <section className="min-h-screen min-w-screen">
+          <div className="flex justify-end">
+          <a href="#" className="cursor-pointer mx-2 hover:underline decoration-teal-500 dark:text-gray-300" onClick={onChangeLanguage('en')}>English</a>
+          <a href="#" className="cursor-pointer mx-2 hover:underline decoration-teal-500 dark:text-gray-300" onClick={onChangeLanguage('pt')}>Portuguese</a>
+          </div>
+          
           <div className="text-center p-2">
             <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">Leonardo Castro</h2>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-100">Full-Stack JavaScript Developer</h3>
@@ -118,34 +132,34 @@ export default function Home() {
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Companio OU</h3>
               <p className="py-2 dark:text-gray-400">FullStack JavaScript Engineer</p>
               <h4 className="py-4 text-teal-600 font-bold"><FormattedMessage id="activities" /></h4>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Developed new features and enhancements in both frontend and backend using JavaScript as the primary programming language.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Conducted source code analysis to identify and correct the root causes of issues.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Participated in weekly video meetings with a multicultural and multilingual development team to align on project needs, improvements, and tasks.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Hosted Knowledge Sharing sessions for all company employees to promote learning and knowledge exchange.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Took initiative to dive into new projects aimed at enhancing the company's system.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Utilized Git as the version control system and GitHub as remote repositories for efficient code management.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Developed new features using React.js and Redux for frontend development.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Integrated third-party applications with company APIs to improve system functionality and connectivity.</p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_1"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_2"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_3"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_4"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_5"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_6"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_7"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_8"/></p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={languages} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Tata Consultancy Services</h3>
               <p className="py-2 dark:text-gray-400">Systems Support analyst</p>
-              <h4 className="py-4 text-teal-600 font-bold">Activities</h4>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Actively read source code to identify root causes of problems and implement necessary corrections.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Provide user support for systems, including ADM system (ERP) and JDE Oracle Origination.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Deliver training to new team members and develop process optimization strategies.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Prepare Procedure Operation Process (POP) manuals for system operations.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Generate reports using Microsoft SQL Server and Toad (Oracle) to support audits and business activities.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Collaborate with fiscal and accounting teams for monthly closing to ensure compliance.</p>
-              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center">Demonstrate expertise in problem-solving and bug resolution for web systems developed by the company.</p>
+              <h4 className="py-4 text-teal-600 font-bold"><FormattedMessage id="activities"/></h4>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tsc_activity_1"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_2"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_3"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_4"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_5"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_6"/></p>
+              <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_7"/></p>
             </div>
           </div>
         </section>
         <footer>
           <div className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-center rounded-xl ">
-            <p className="font-burtons text-2xl pt-3">Thank you for visiting my Portfolio</p>
-            <p className="font-bold text-xl mb-3">These are my contacts:</p>
+            <p className="font-burtons text-2xl pt-3"><FormattedMessage id="thank_you"/></p>
+            <p className="font-bold text-xl mb-3"><FormattedMessage id="contact"/> </p>
             <div className="flex justify-center">
               <AiFillMail className="text-xl"/><p className="mx-2">leonardofagundescastro@gmail.com</p>
             </div>
@@ -157,4 +171,11 @@ export default function Home() {
       </main>
     </div>
   )
+}
+export function getStaticProps({ locale }) {
+  return {
+    props: {
+      locale: locale,
+    },
+  };
 }

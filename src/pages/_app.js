@@ -1,11 +1,10 @@
 import '@/styles/globals.css'
 import { useState } from "react";
 import {IntlProvider} from 'react-intl'
-import messagesEn from "../translations/eng.json";
+import messagesEn from "../translations/en.json";
 import messagesPt from "../translations/pt.json";
 
 export default function App({ Component, pageProps }) {
-    const [locale, setLocale] = useState('en');
 
     const messages = {
         en: messagesEn,
@@ -13,7 +12,7 @@ export default function App({ Component, pageProps }) {
     };
 
     return (
-      <IntlProvider key={locale} locale={locale} messages={messages[locale]} defaultLocale="en">
+      <IntlProvider key={pageProps.locale} locale={pageProps.locale} messages={messages[pageProps.locale]} defaultLocale="en">
         <Component {...pageProps} />
       </IntlProvider>
 
