@@ -1,23 +1,25 @@
 import Head from "next/head";
 import {BsFillMoonStarsFill} from 'react-icons/bs'
 import {
-  AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillGithub,
   AiFillMail,
   AiFillPhone,
-  AiFillInstagram
+  AiFillInstagram,
+  AiOutlineWhatsApp
 } from 'react-icons/ai'
 import Image from "next/image"
 import leonardo from '../../public/profile-pic.png'
 import design from '../../public/design.png'
 import code from '../../public/code.png'
 import languages from '../../public/language.png'
+import tcsLogo from '../../public/tcs-logo.png'
+import companioLogo from '../../public/companio-logo.png'
 import { useState } from "react";
 import {FormattedMessage} from 'react-intl'
 import { useRouter } from 'next/router';
 
-export default function Home({locale}) {
+export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 
   const router = useRouter()
@@ -48,35 +50,35 @@ export default function Home({locale}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
-        <nav className="p-5 mb-6 flex justify-between md:sticky top-0 bg-gradient-to-r from-cyan-500 to-teal-500 text-white rounded-xl rounded-t-none z-10">
+        <nav className="p-5 mb-6 flex justify-between md:sticky top-0 bg-gradient-to-r from-[#824ddc] to-[#1E293B] text-white rounded-xl rounded-t-none z-10">
           <h1 className="text-xl font-burtons dark:text-gray-100">Developed by Leonardo</h1>
           <ul className="flex items-center">
-            <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-gray-300" /></li>
-            <li><a className="bg-gray-300 text-teal-800 px-4 py-2 rounded-md ml-8" href="#" onClick={handleDownload}>
-              <FormattedMessage id="resume" defaultMessage="Resumé" />
+            <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl dark:text-[#824ddc]" /></li>
+            <li><a className="bg-gray-300 font-burtons text-[#824ddc] px-4 py-2 rounded-md ml-8" href="#" onClick={handleDownload}>
+              <FormattedMessage id="resume" defaultMessage="Resumé"/>
             </a></li>
           </ul>
         </nav>
         <section className="min-h-screen min-w-screen">
-          <div className="flex justify-end">
-          <a href="#" className="cursor-pointer mx-2 hover:underline decoration-teal-500 dark:text-gray-300" onClick={onChangeLanguage('en')}>English</a>
-          <a href="#" className="cursor-pointer mx-2 hover:underline decoration-teal-500 dark:text-gray-300" onClick={onChangeLanguage('pt')}>Portuguese</a>
+          <div className="flex justify-center md:justify-end">
+          <a href="#" className="cursor-pointer mx-2 hover:underline decoration-[#7E81FF] dark:text-gray-300" onClick={onChangeLanguage('en')}>English</a>
+          <a href="#" className="cursor-pointer mx-2 hover:underline decoration-[#7E81FF] dark:text-gray-300" onClick={onChangeLanguage('pt')}>Portuguese</a>
           </div>
           
           <div className="text-center p-2">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">Leonardo Castro</h2>
+            <h2 className="text-5xl py-2 text-[#824ddc] font-medium md:text-6xl">Leonardo Castro</h2>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-gray-100">Full-Stack JavaScript Developer</h3>
             <p className="tex-md py-5 leading-8 text-gray-800 dark:text-gray-300 md:text-xl max-w-xl mx-auto">
               <FormattedMessage id="introduction_header" defaultMessage="Developer offering frontend and backend services. See below for more details about my profile." />
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-12 md:gap-16 py-3 text-gray-600">
-            <a href="https://twitter.com/leocastroHP" target="_blank"><AiFillTwitterCircle /></a>
-            <a href="https://www.instagram.com/leocastrosl/" target="_blank"><AiFillInstagram /></a>
-            <a href="https://www.linkedin.com/in/leonardo-fagundes-de-castro/" target="_blank"><AiFillLinkedin /></a>
-            <a href="https://github.com/LeoCastr0" target="_blank"><AiFillGithub /></a>
+            <a href="https://wa.me/+5516997926365" target="_blank"><AiOutlineWhatsApp className="hover:text-[#7E81FF]"/></a>
+            <a href="https://www.instagram.com/leocastrosl/" target="_blank"><AiFillInstagram className="hover:text-[#7E81FF]"/></a>
+            <a href="https://www.linkedin.com/in/leonardo-fagundes-de-castro/" target="_blank"><AiFillLinkedin className="hover:text-[#7E81FF]"/></a>
+            <a href="https://github.com/LeoCastr0" target="_blank"><AiFillGithub className="hover:text-[#7E81FF]"/></a>
           </div>
-          <div className="relative mx-auto rounded-full w-80 h-80 mt-20 md:h-96 md:w-96">
+          <div className="relative mx-auto rounded-full w-80 h-80 mt-10 md:mt-20 md:h-96 md:w-96">
             <Image src={leonardo} layout="fill" objectFit="cover"/>
           </div>
         </section>
@@ -84,14 +86,14 @@ export default function Home({locale}) {
           <div>
             <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left"><FormattedMessage id="summary" defaultMessage="Summary" /></h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-300">
-              <FormattedMessage id="summary_text_1"/><span className="text-teal-500"><FormattedMessage id="english" /> </span><FormattedMessage id="summary_text_2"/><span className="text-teal-500">JavaScript</span>,
-              <span className="text-teal-500"> Node.js</span>, <span className="text-teal-500">React.js</span>, <span className="text-teal-500">HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>,
-              <FormattedMessage id="and" /> <span className="text-teal-500">Bootstrap</span>.
+              <FormattedMessage id="summary_text_1"/><span className="text-[#7E81FF]"><FormattedMessage id="english" /> </span><FormattedMessage id="summary_text_2"/><span className="text-[#7E81FF]">JavaScript</span>,
+              <span className="text-[#7E81FF]"> Node.js</span>, <span className="text-[#7E81FF]">React.js</span>, <span className="text-[#7E81FF]">HTML</span>, <span className="text-[#7E81FF]">CSS</span>, <span className="text-[#7E81FF]">Tailwind</span>,
+              <FormattedMessage id="and" /> <span className="text-[#7E81FF]">Bootstrap</span>.
               <FormattedMessage id="summary_text_3" />
-              <FormattedMessage id="summary_text_4" /><span className="text-teal-500">problem-solving</span> <FormattedMessage id="summary_text_5" />
-              <FormattedMessage id="summary_text_6" /> <span className="text-teal-500"><FormattedMessage id="english" /></span>, <span className="text-teal-500">JavaScript</span>, <span className="text-teal-500">Node.js</span>,
-              <span className="text-teal-500"> React.js</span>,<span className="text-teal-500"> HTML</span>, <span className="text-teal-500">CSS</span>, <span className="text-teal-500">Tailwind</span>,
-              <FormattedMessage id="and" /><span className="text-teal-500"> Bootstrap</span>.
+              <FormattedMessage id="summary_text_4" /><span className="text-[#7E81FF]">problem-solving</span> <FormattedMessage id="summary_text_5" />
+              <FormattedMessage id="summary_text_6" /> <span className="text-[#7E81FF]"><FormattedMessage id="english" /></span>, <span className="text-[#7E81FF]">JavaScript</span>, <span className="text-[#7E81FF]">Node.js</span>,
+              <span className="text-[#7E81FF]"> React.js</span>,<span className="text-[#7E81FF]"> HTML</span>, <span className="text-[#7E81FF]">CSS</span>, <span className="text-[#7E81FF]">Tailwind</span>,
+              <FormattedMessage id="and" /><span className="text-[#7E81FF]"> Bootstrap</span>.
             </p>
           </div>
           <div className="lg:flex gap-10">
@@ -99,7 +101,7 @@ export default function Home({locale}) {
               <Image src={design} className="mx-auto" width={100} height={100}/>
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Frontend</h3>
               <p className="py-2 dark:text-gray-400"><FormattedMessage id="frontend_text"/> </p>
-              <h4 className="py-4 text-teal-600 font-bold">Frontend stacks</h4>
+              <h4 className="py-4 text-[#824ddc] font-bold">Frontend stacks</h4>
               <p className="text-gray-800 py-1 dark:text-gray-300">React.js - Redux</p>
               <p className="text-gray-800 py-1 dark:text-gray-300">CSS - HTML</p>
               <p className="text-gray-800 py-1 dark:text-gray-300">Tailwind - Bootstrap</p>
@@ -108,16 +110,16 @@ export default function Home({locale}) {
               <Image src={code} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Backend</h3>
               <p className="py-2 dark:text-gray-400"><FormattedMessage id="backend_text" /></p>
-              <h4 className="py-4 text-teal-600 font-bold">Backend stacks</h4>
+              <h4 className="py-4 text-[#824ddc] font-bold">Backend stacks</h4>
               <p className="text-gray-800 py-1 dark:text-gray-300">Node.js and Express</p>
               <p className="text-gray-800 py-1 dark:text-gray-300">Mongo.db and Mongoose</p>
               <p className="text-gray-800 py-1 dark:text-gray-300">SQLServer and PLSQL</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
               <Image src={languages} className="mx-auto" width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Languages</h3>
+              <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100"><FormattedMessage id="languages" defaultMessage="Languages" /></h3>
               <p className="py-2 dark:text-gray-400"><FormattedMessage id="languages_text" /></p>
-              <h4 className="py-4 text-teal-600 font-bold"><FormattedMessage id="languages_i_speak" /></h4>
+              <h4 className="py-4 text-[#824ddc] font-bold"><FormattedMessage id="languages_i_speak" /></h4>
               <p className="text-gray-800 py-1 dark:text-gray-300"><FormattedMessage id="portuguese_level" /></p>
               <p className="text-gray-800 py-1 dark:text-gray-300"><FormattedMessage id="english_level" /></p>
               <p className="text-gray-800 py-1 dark:text-gray-300"><FormattedMessage id="spanish_level" /></p>
@@ -128,10 +130,11 @@ export default function Home({locale}) {
           <h3 className="text-3xl py-1 dark:text-gray-100 text-center md:text-left"><FormattedMessage id="relevant_companies_text" /></h3>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
-              <Image src={languages} className="mx-auto" width={100} height={100} />
+              <Image src={companioLogo} className="mx-auto" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Companio OU</h3>
+              <p className="pb-2 font-xs dark:text-gray-400">Tallinn - Estonia</p>
               <p className="py-2 dark:text-gray-400">FullStack JavaScript Engineer</p>
-              <h4 className="py-4 text-teal-600 font-bold"><FormattedMessage id="activities" /></h4>
+              <h4 className="py-4 text-[#824ddc] font-bold"><FormattedMessage id="activities" /></h4>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_1"/></p>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_2"/></p>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_3"/></p>
@@ -142,10 +145,11 @@ export default function Home({locale}) {
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="companio_activity_8"/></p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:shadow-gray-600">
-              <Image src={languages} className="mx-auto" width={100} height={100} />
+              <Image src={tcsLogo} className="mx-auto pb-[37.5px]" width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-100">Tata Consultancy Services</h3>
+              <p className="pb-2 font-xs dark:text-gray-400">Ribeirao Preto - Brazil</p>
               <p className="py-2 dark:text-gray-400">Systems Support analyst</p>
-              <h4 className="py-4 text-teal-600 font-bold"><FormattedMessage id="activities"/></h4>
+              <h4 className="py-4 text-[#824ddc] font-bold"><FormattedMessage id="activities"/></h4>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tsc_activity_1"/></p>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_2"/></p>
               <p className="text-gray-800 py-1 dark:text-gray-300 text-left md:text-center"><FormattedMessage id="tcs_activity_3"/></p>
@@ -157,7 +161,7 @@ export default function Home({locale}) {
           </div>
         </section>
         <footer>
-          <div className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-center rounded-xl ">
+          <div className="bg-gradient-to-r from-[#824ddc] to-[#1E293B] text-white text-center rounded-xl ">
             <p className="font-burtons text-2xl pt-3"><FormattedMessage id="thank_you"/></p>
             <p className="font-bold text-xl mb-3"><FormattedMessage id="contact"/> </p>
             <div className="flex justify-center">
